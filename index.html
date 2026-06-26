@@ -77,7 +77,7 @@
   .logo-mark {
     width: 36px;
     height: 36px;
-    background: var(--navy);
+    /* background: var(--white); */
     border-radius: 10px;
     display: flex;
     align-items: center;
@@ -788,8 +788,8 @@
     margin: 0 auto;
   }
 
-  .ak-hero h1 { color: var(--white); margin-bottom: 20px; }
-  .ak-hero .lead { color: rgba(255,255,255,0.65); margin-bottom: 32px; }
+  .ak-hero h1 { color: var(--black); margin-bottom: 20px; }
+  .ak-hero .lead { color: --black(255,255,255,0.65); margin-bottom: 32px; }
 
   .ak-product-card {
     border: 1px solid rgba(255,255,255,0.1);
@@ -801,8 +801,8 @@
 
   .ak-product-card:hover { background: rgba(255,255,255,0.08); }
 
-  .ak-product-card h3 { color: var(--white); margin-bottom: 8px; }
-  .ak-product-card p { color: rgba(255,255,255,0.55); font-size: 15px; }
+  .ak-product-card h3 { color: var(--black); margin-bottom: 8px; }
+  .ak-product-card p { color: --black(255,255,255,0.55); font-size: 15px; }
 
   .ak-pill {
     display: inline-block;
@@ -814,7 +814,7 @@
   }
 
   .ak-pill-active { background: rgba(245,98,46,0.2); color: var(--orange-light); }
-  .ak-pill-future { background: rgba(255,255,255,0.1); color: rgba(255,255,255,0.5); }
+  .ak-pill-future { background: rgba(49, 168, 186, 0.477); color: var(--navy); }
 
   /* ─── PAGE HERO (simple) ─── */
   .page-hero {
@@ -960,13 +960,9 @@
   <div class="nav-inner">
     <a class="logo" onclick="navigate('home')">
       <div class="logo-mark">
-        <svg viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
-          <circle cx="10" cy="10" r="3" fill="#F5622E"/>
-          <path d="M10 2C5.58 2 2 5.58 2 10s3.58 8 8 8 8-3.58 8-8-3.58-8-8-8zm0 2a6 6 0 016 6 6 6 0 01-6 6A6 6 0 014 10a6 6 0 016-6z" fill="white" opacity="0.6"/>
-          <path d="M10 6v4l3 2" stroke="#F5622E" stroke-width="1.5" stroke-linecap="round"/>
-        </svg>
+         <img src="images/logo-removebg 2.png" alt="Rozgar Logo">
       </div>
-      <span class="logo-text">roz<span>gar</span></span>
+      <span class="logo-text">ROZGAR</span>
     </a>
     <ul class="nav-links" id="navLinks">
       <li><a onclick="navigate('home')" data-page="home">Home</a></li>
@@ -987,9 +983,9 @@
   <div class="mobile-menu-header">
     <a class="logo" onclick="navigate('home'); toggleMobile();">
       <div class="logo-mark">
-        <svg viewBox="0 0 20 20" fill="none"><circle cx="10" cy="10" r="3" fill="#F5622E"/><path d="M10 2C5.58 2 2 5.58 2 10s3.58 8 8 8 8-3.58 8-8-3.58-8-8-8zm0 2a6 6 0 016 6 6 6 0 01-6 6A6 6 0 014 10a6 6 0 016-6z" fill="white" opacity="0.6"/></svg>
+        <img src="images/logo-removebg 2.png" alt="Rozgar Logo">
       </div>
-      <span class="logo-text">roz<span>gar</span></span>
+      <span class="logo-text">ROZGAR</span>
     </a>
     <button class="mobile-close" onclick="toggleMobile()">✕</button>
   </div>
@@ -1043,7 +1039,7 @@
             <div class="hero-stat-icon purple">📍</div>
             <div>
               <div class="hero-stat-label">Launch areas</div>
-              <div class="hero-stat-value">Defence · Clifton · Gulshan</div>
+              <div class="hero-stat-value">Karachi</div>
             </div>
           </div>
         </div>
@@ -1068,35 +1064,77 @@
       <div class="section-header centered">
         <div class="eyebrow">How Rozgar Works</div>
         <h2>Book a professional in minutes</h2>
-        <p class="lead">No more haggling on the street or calling around. Rozgar makes finding a trusted kaarigar as easy as ordering food online.</p>
+        <p class="lead">No more haggling on the street or calling around. Rozgar makes finding a trusted blue-collar worker easy and safe.</p>
       </div>
       <div class="card-grid card-grid-4">
         <div class="how-step">
           <div class="step-num">01</div>
           <div>
-            <h4 style="margin-bottom:6px;">Pick a service</h4>
-            <p style="font-size:14px;">Choose from plumbing, electrical, carpentry, AC servicing, painting, and more.</p>
+            <h4 style="margin-bottom:6px;">Choose a Category</h4>
+            <p style="font-size:14px;">Choose a category like plumbing, electrical, carpentry, AC servicing, painting, and more.</p>
           </div>
         </div>
         <div class="how-step">
           <div class="step-num">02</div>
           <div>
-            <h4 style="margin-bottom:6px;">Get matched</h4>
-            <p style="font-size:14px;">We surface verified workers near you based on skill, rating, and availability.</p>
+            <h4 style="margin-bottom:6px;">Pick a service</h4>
+            <p style="font-size:14px;">Choose a predefined service or define your custom service.</p>
           </div>
         </div>
         <div class="how-step">
           <div class="step-num">03</div>
           <div>
-            <h4 style="margin-bottom:6px;">Agree on price</h4>
-            <p style="font-size:14px;">See upfront quotes and accept or negotiate — no hidden charges, ever.</p>
+            <h4 style="margin-bottom:6px;">Upload Media</h4>
+            <p style="font-size:14px;">Upload photos, videos, and record a voice note of your problem for the worker to understand it better.</p>
           </div>
         </div>
         <div class="how-step">
           <div class="step-num">04</div>
           <div>
-            <h4 style="margin-bottom:6px;">Pay safely</h4>
-            <p style="font-size:14px;">Pay through the app after the job is done to your satisfaction.</p>
+            <h4 style="margin-bottom:6px;">Confirm Address</h4>
+            <p style="font-size:14px;">Provide your complete address to help us connect you with the nearest verified professionals, ensure accurate service availability, and deliver a seamless booking experience.</p>
+          </div>
+        </div>
+        <div class="how-step">
+          <div class="step-num">05</div>
+          <div>
+            <h4 style="margin-bottom:6px;">Find a Service provider</h4>
+            <p style="font-size:14px;">We will shortly conect you with a nearby skilled professional in your area.</p>
+          </div>
+        </div>
+        <div class="how-step">
+          <div class="step-num">06</div>
+          <div>
+            <h4 style="margin-bottom:6px;">Negotiate</h4>
+            <p style="font-size:14px;">Negotiate with the service provider to agree on a provisional service cost.</p>
+          </div>
+        </div>
+        <div class="how-step">
+          <div class="step-num">07</div>
+          <div>
+            <h4 style="margin-bottom:6px;">Worker reaches your location</h4>
+            <p style="font-size:14px;">Worker reaches your location and ispect the problem and provide a final service cost.</p>
+          </div>
+        </div>
+        <div class="how-step">
+          <div class="step-num">08</div>
+          <div>
+            <h4 style="margin-bottom:6px;">Start job</h4>
+            <p style="font-size:14px;">Start the job once you agree with the worker on the cost.</p>
+          </div>
+        </div>
+        <div class="how-step">
+          <div class="step-num">09</div>
+          <div>
+            <h4 style="margin-bottom:6px;">Pay</h4>
+            <p style="font-size:14px;">Pay once the job is done either with cash or make an online payment.</p>
+          </div>
+        </div>
+        <div class="how-step">
+          <div class="step-num">10</div>
+          <div>
+            <h4 style="margin-bottom:6px;">Provide feedback</h4>
+            <p style="font-size:14px;">Provide feedback of the service by provide rating out of 5 and a feedback message for the worker to get more visibility and help us to improve ROZGAR.</p>
           </div>
         </div>
       </div>
@@ -1177,7 +1215,7 @@
     <div class="hero-grid"></div>
     <div class="cta-band-inner">
       <div class="eyebrow">Coming Soon</div>
-      <h2>Be the first to know when Rozgar launches</h2>
+      <h2>Be the first to know when ROZGAR launches</h2>
       <p>We're starting in Defence, Clifton, and Gulshan-e-Iqbal. Join the waitlist and get early access.</p>
       <a class="btn btn-primary" onclick="navigate('contact')">Join the Waitlist →</a>
     </div>
@@ -1196,10 +1234,10 @@
       <div>
         <div class="eyebrow">Our Story</div>
         <h1>Built in Karachi, for Karachi</h1>
-        <p class="lead" style="margin-top:16px;">Rozgar was born out of a simple frustration: finding a reliable plumber or electrician in Pakistan is harder than it should be. We're here to fix that.</p>
+        <p class="lead" style="margin-top:16px;">ROZGAR was born out of a simple frustration: finding a reliable plumber or electrician in Pakistan is harder than it should be. We're here to fix that.</p>
       </div>
       <div>
-        <p style="margin-bottom:16px;">The problem isn't that skilled workers don't exist — Pakistan has millions of talented kaarigar. The problem is <strong>trust, discovery, and fair payment</strong>.</p>
+        <p style="margin-bottom:16px;">The problem isn't that skilled workers don't exist — Pakistan has millions of talented skilled blue-collar professionals. The problem is <strong>trust, discovery, and fair payment</strong>.</p>
         <p>Homeowners can't verify who's coming into their home. Workers can't build a reputation beyond word-of-mouth. Payments are cash-only and dispute-prone. Rozgar is the infrastructure layer this market has been missing.</p>
       </div>
     </div>
@@ -1213,7 +1251,7 @@
     <div class="two-col-prose">
       <div>
         <p style="margin-bottom:16px;">We believe every Pakistani household deserves access to trustworthy, skilled professionals — and every skilled worker deserves a platform to earn fairly and build a career.</p>
-        <p>Rozgar is not just an app. It's a trust layer between millions of homes and the kaarigar who serve them. By bringing identity verification, transparent pricing, and in-app payments to an entirely informal market, we're building the foundation for a more organised, more equitable services economy.</p>
+        <p>Rozgar is not just an app. It's a trust layer between millions of homes and the skilled professionals who serve them. By bringing identity verification, transparent pricing, and in-app payments to an entirely informal market, we're building the foundation for a more organised, more equitable services economy.</p>
       </div>
       <div style="display:flex;flex-direction:column;gap:12px;">
         <div class="value-card">
@@ -1242,7 +1280,7 @@
     <div class="card-grid card-grid-3">
       <div class="team-card">
         <div class="avatar">AK</div>
-        <h4>Abdullah K.</h4>
+        <h4>Syed Abdullah Kashif</h4>
         <div class="role">Founder & CEO</div>
         <p style="font-size:14px;">CS student at University of Karachi (UBIT) and founder of AK Systems. Building Pakistan's first verified blue-collar marketplace.</p>
       </div>
@@ -1283,7 +1321,7 @@
     <div class="page-hero-inner">
       <div class="eyebrow">What We Offer</div>
       <h1>Services we connect you with</h1>
-      <p class="lead" style="margin-top:12px;">Verified kaarigar for every home need. Starting with the most in-demand trades in Karachi.</p>
+      <p class="lead" style="margin-top:12px;">Verified skilled professionals for every home need. Starting with the most in-demand trades in Karachi.</p>
     </div>
   </div>
 
@@ -1395,7 +1433,7 @@
     <div class="section-alt-inner">
       <div class="section-header centered">
         <div class="eyebrow">Worker Verification</div>
-        <h2>What makes a Rozgar-verified kaarigar</h2>
+        <h2>What makes a Rozgar-verified professional</h2>
       </div>
       <div class="card-grid card-grid-3">
         <div class="card text-center">
@@ -1439,60 +1477,60 @@
       <div class="eyebrow" style="margin-bottom:20px;">For Customers</div>
 
       <div class="faq-item" onclick="toggleFaq(this)">
-        <div class="faq-question">What is Rozgar? <div class="faq-chevron">▾</div></div>
-        <div class="faq-answer">Rozgar is a digital platform that connects Pakistani households with verified, skilled kaarigar — plumbers, electricians, carpenters, AC technicians, and more. Think of it as an Uber-style booking experience, but for home services, with full identity verification and in-app payment.</div>
+        <div class="faq-question">What is ROZGAR? <div class="faq-chevron">▾</div></div>
+        <div class="faq-answer">ROZGAR is a digital platform that connects Pakistani households with verified, skilled professionals — plumbers, electricians, carpenters, AC technicians, and more. Think of it as a booking experience, but for home services, with full identity verification and in-app payment.</div>
       </div>
 
       <div class="faq-item" onclick="toggleFaq(this)">
-        <div class="faq-question">Is Rozgar available right now? <div class="faq-chevron">▾</div></div>
-        <div class="faq-answer">Rozgar is currently in development and preparing for its launch in Karachi. We are targeting select areas — Defence, Clifton, and Gulshan-e-Iqbal — for our initial rollout. You can join the waitlist through our Contact page to be notified the moment we go live.</div>
+        <div class="faq-question">Is ROZGAR available right now? <div class="faq-chevron">▾</div></div>
+        <div class="faq-answer">ROZGAR is currently in development and preparing for its launch in Karachi. We are targeting select areas — Defence, Clifton, and Gulshan-e-Iqbal — for our initial rollout. You can join the waitlist through our Contact page to be notified the moment we go live.</div>
       </div>
 
       <div class="faq-item" onclick="toggleFaq(this)">
         <div class="faq-question">How do I book a service? <div class="faq-chevron">▾</div></div>
-        <div class="faq-answer">Once launched, you will download the Rozgar customer app, describe your service need, set a budget or request quotes, and be matched with nearby verified workers. You can track the worker in real-time and pay securely through the app once the job is done to your satisfaction.</div>
+        <div class="faq-answer">Once launched, you will download the ROZGAR customer app, select a category, choose a predefined service or describe your service need, confirm your address, and be matched with nearby verified workers. You can track the worker in real-time and pay securely through the app once the job is done to your satisfaction.</div>
       </div>
 
       <div class="faq-item" onclick="toggleFaq(this)">
         <div class="faq-question">How are prices decided? <div class="faq-chevron">▾</div></div>
-        <div class="faq-answer">Rozgar uses a transparent, negotiation-friendly model inspired by InDrive. You post a job with your budget, nearby workers respond with their offers, and you choose who you want. There are no hidden platform fees for customers — what you agree with the worker is what you pay.</div>
+        <div class="faq-answer">ROZGAR uses a transparent, negotiation-friendly model inspired by InDrive. You post a job with your budget, nearby workers respond with their offers, and you choose who you want. There are no hidden platform fees for customers — what you agree with the worker is what you pay.</div>
       </div>
 
       <div class="faq-item" onclick="toggleFaq(this)">
         <div class="faq-question">What if I'm not happy with the work done? <div class="faq-chevron">▾</div></div>
-        <div class="faq-answer">Every job on Rozgar comes with a post-job guarantee. If you're not satisfied, you can raise a dispute through the app before releasing payment. Our team reviews disputes and works to reach a fair resolution. We also encourage leaving honest ratings so other users can make informed decisions.</div>
+        <div class="faq-answer">Every job on ROZGAR comes with a post-job guarantee. If you're not satisfied, you can raise a dispute through the app before payment. Our team reviews disputes and works to reach a fair resolution. We also encourage leaving honest ratings so other users can make informed decisions.</div>
       </div>
 
       <div class="faq-item" onclick="toggleFaq(this)">
         <div class="faq-question">Is my payment safe? <div class="faq-chevron">▾</div></div>
-        <div class="faq-answer">Yes. Payments on Rozgar are processed through a secure in-app wallet. You only release payment after the job is marked complete and you're satisfied. We do not share your financial details with workers, and all transactions are logged for your records.</div>
+        <div class="faq-answer">Yes. Payments on ROZGAR are processed through a secure third-part merchants. You only make payment after the job is marked complete and you're satisfied. We do not share your financial details with workers, and all transactions are logged for your records.</div>
       </div>
 
       <div class="faq-item" onclick="toggleFaq(this)">
-        <div class="faq-question">Which areas does Rozgar serve? <div class="faq-chevron">▾</div></div>
-        <div class="faq-answer">At launch, Rozgar will serve Defence Housing Authority (DHA), Clifton, and Gulshan-e-Iqbal in Karachi. We plan to expand to other Karachi areas and eventually other cities based on demand and worker supply.</div>
+        <div class="faq-question">Which areas does ROZGAR serve? <div class="faq-chevron">▾</div></div>
+        <div class="faq-answer">At launch, ROZGAR will serve Defence Housing Authority (DHA), Clifton, and Gulshan-e-Iqbal in Karachi. We plan to expand to other Karachi areas and eventually other cities based on demand and worker supply.</div>
       </div>
 
-      <div class="eyebrow" style="margin: 48px 0 20px;">For Workers (Kaarigar)</div>
+      <div class="eyebrow" style="margin: 48px 0 20px;">For Workers (Skilled professionals)</div>
 
       <div class="faq-item" onclick="toggleFaq(this)">
-        <div class="faq-question">How do I join Rozgar as a worker? <div class="faq-chevron">▾</div></div>
-        <div class="faq-answer">You will sign up through the Rozgar Partner app, submit your CNIC and a selfie for identity verification, and select the service categories you work in. Our team reviews your application and, once approved, you can start receiving job requests in your area.</div>
+        <div class="faq-question">How do I join ROZGAR as a worker? <div class="faq-chevron">▾</div></div>
+        <div class="faq-answer">You will sign up through the ROZGAR Partner app, verify your phone number, submit your CNIC and a selfie for identity verification, and select the service categories you work in. Our team reviews your application and, once approved, you can start receiving job requests in your area.</div>
       </div>
 
       <div class="faq-item" onclick="toggleFaq(this)">
-        <div class="faq-question">Does Rozgar charge workers a fee? <div class="faq-chevron">▾</div></div>
-        <div class="faq-answer">Rozgar operates on a commission-based model. A small platform commission is deducted from each completed job. There are no upfront registration fees. Workers keep the majority of what they earn, and all earnings are tracked transparently in the app.</div>
+        <div class="faq-question">Does ROZGAR charge workers a fee? <div class="faq-chevron">▾</div></div>
+        <div class="faq-answer">ROZGAR operates on a commission-based model. A small platform commission is deducted from each completed job. There are no upfront registration fees. Workers keep the majority of what they earn, and all earnings are tracked transparently in the app.</div>
       </div>
 
       <div class="faq-item" onclick="toggleFaq(this)">
         <div class="faq-question">When and how do workers get paid? <div class="faq-chevron">▾</div></div>
-        <div class="faq-answer">Once a customer marks a job complete and approves payment, earnings are credited to your Rozgar wallet. You can withdraw to your bank account or mobile wallet (JazzCash/Easypaisa) on a regular schedule. All transactions are tracked in your dashboard.</div>
+        <div class="faq-answer">Once a customer marks a job complete and approves payment, earnings are credited to your bank account or mobile wallet (JazzCash/Easypaisa) on a regular schedule. All transactions are tracked in your dashboard.</div>
       </div>
 
       <div class="faq-item" onclick="toggleFaq(this)">
-        <div class="faq-question">Can I work on Rozgar part-time? <div class="faq-chevron">▾</div></div>
-        <div class="faq-answer">Absolutely. Rozgar is designed for flexible work. You set your own availability and service radius. Accept jobs when you want, at the rates you're comfortable with. There's no minimum commitment required.</div>
+        <div class="faq-question">Can I work on ROZGAR part-time? <div class="faq-chevron">▾</div></div>
+        <div class="faq-answer">Absolutely. ROZGAR is designed for flexible work. You set your own availability and service radius. Accept jobs when you want, at the rates you're comfortable with. There's no minimum commitment required.</div>
       </div>
 
     </div>
@@ -1510,7 +1548,7 @@
     <div class="page-hero-inner">
       <div class="eyebrow">Get in Touch</div>
       <h1>We'd love to hear from you</h1>
-      <p class="lead" style="margin-top:12px;">Whether you're a potential customer, kaarigar, investor, or partner — reach out. We read every message.</p>
+      <p class="lead" style="margin-top:12px;">Whether you're a potential customer, skilled professional, investor, or partner — reach out. We read every message.</p>
     </div>
   </div>
 
@@ -1523,7 +1561,7 @@
           <div class="contact-icon">📧</div>
           <div>
             <h4>Email</h4>
-            <p>hello@rozgar.pk<br><span style="font-size:13px;color:var(--gray-400);">We respond within 24 hours</span></p>
+            <p>rozgaradmin1@gmail.com<br><span style="font-size:13px;color:var(--gray-400);">We respond within 24 hours</span></p>
           </div>
         </div>
 
@@ -1547,7 +1585,7 @@
           <div class="contact-icon">💼</div>
           <div>
             <h4>For Investors & Partners</h4>
-            <p>investors@rozgar.pk<br><span style="font-size:13px;color:var(--gray-400);">Pitch deck available on request</span></p>
+            <p>rozgaradmin1@gmail.com<br><span style="font-size:13px;color:var(--gray-400);">More details available on request</span></p>
           </div>
         </div>
       </div>
@@ -1572,8 +1610,8 @@
           <label>I am a…</label>
           <select>
             <option value="">Select one</option>
-            <option>Customer (homeowner)</option>
-            <option>Kaarigar / Worker</option>
+            <option>Customer</option>
+            <option>Skilled professional / Worker</option>
             <option>Investor</option>
             <option>Media / Press</option>
             <option>Partner / Business</option>
@@ -1602,8 +1640,7 @@
   <div class="ak-hero">
     <div class="hero-grid"></div>
     <div class="ak-hero-inner">
-      <div class="eyebrow">AK Systems</div>
-      <h1>Building Pakistan's digital infrastructure</h1>
+      <h1>AK Systems</h1>
       <p class="lead">AK Systems is a Karachi-based technology company building platforms that solve real problems for Pakistan's underserved markets.</p>
     </div>
   </div>
@@ -1613,13 +1650,13 @@
       <div>
         <div class="eyebrow">About the Company</div>
         <h2 style="margin-bottom:20px;">Who we are</h2>
-        <p style="margin-bottom:16px;">AK Systems was founded with a single conviction: the biggest opportunities in Pakistan tech are not in copying Western apps, but in solving distinctly Pakistani problems with digital-first thinking.</p>
+        <p style="margin-bottom:16px;">AK Systems was founded with a single conviction: the biggest opportunities in Pakistan tech are not in copying Western ideas and models, but in solving distinctly Pakistani problems with digital-first thinking.</p>
         <p style="margin-bottom:16px;">From the informal labour market to the unorganised SME sector, we focus on markets that are large, underserved, and ready for a digital layer.</p>
-        <p>We're a lean, execution-focused team based in Karachi — currently in build mode with our flagship product, Rozgar.</p>
+        <p>We're a lean, execution-focused team based in Karachi — currently in build mode with our flagship product, ROZGAR.</p>
       </div>
       <div style="display:flex;flex-direction:column;gap:12px;">
         <div class="stat-item">
-          <div class="stat-num" style="font-size:32px;">2024</div>
+          <div class="stat-num" style="font-size:32px;">2026</div>
           <div class="stat-label">Founded in Karachi</div>
         </div>
         <div class="stat-item">
@@ -1627,7 +1664,7 @@
           <div class="stat-label">Active product in development</div>
         </div>
         <div class="stat-item">
-          <div class="stat-num" style="font-size:32px;">🇵🇰</div>
+          <div class="stat-num" style="font-size:32px;">Pakistan</div>
           <div class="stat-label">100% focused on the Pakistani market</div>
         </div>
       </div>
@@ -1823,9 +1860,9 @@
       <div class="footer-brand">
         <div class="logo" onclick="navigate('home')" style="cursor:pointer;">
           <div class="logo-mark">
-            <svg viewBox="0 0 20 20" fill="none"><circle cx="10" cy="10" r="3" fill="#F5622E"/><path d="M10 2C5.58 2 2 5.58 2 10s3.58 8 8 8 8-3.58 8-8-3.58-8-8-8zm0 2a6 6 0 016 6 6 6 0 01-6 6A6 6 0 014 10a6 6 0 016-6z" fill="white" opacity="0.6"/></svg>
+            <img src="images/logo-removebg 2.png" alt="Rozgar Logo">
           </div>
-          <span class="logo-text">roz<span>gar</span></span>
+          <span class="logo-text">ROZGAR</span></span>
         </div>
         <p>Pakistan's trusted platform for verified home service professionals. Connecting households with skilled kaarigar in Karachi.</p>
         <p style="margin-top:12px;font-size:13px;">A product of <span style="color:rgba(255,255,255,0.7);font-weight:500;cursor:pointer;" onclick="navigate('ak')">AK Systems</span></p>
