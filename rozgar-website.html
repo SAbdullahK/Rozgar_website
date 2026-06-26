@@ -1,0 +1,1909 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Rozgar — Pakistan's Trusted Home Services Platform</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  :root {
+    --navy: #1B2B4B;
+    --navy-light: #243660;
+    --navy-dark: #111D33;
+    --orange: #F5622E;
+    --orange-light: #FF7A4A;
+    --orange-pale: #FFF0EB;
+    --white: #FFFFFF;
+    --gray-50: #F7F8FA;
+    --gray-100: #EEF0F4;
+    --gray-200: #DDE1E9;
+    --gray-400: #9AA3B2;
+    --gray-600: #5A6476;
+    --gray-800: #2D3648;
+    --font-head: 'Plus Jakarta Sans', sans-serif;
+    --font-body: 'Inter', sans-serif;
+    --radius-sm: 6px;
+    --radius-md: 12px;
+    --radius-lg: 20px;
+    --shadow-card: 0 1px 3px rgba(0,0,0,0.08), 0 4px 16px rgba(0,0,0,0.04);
+    --shadow-nav: 0 1px 0 rgba(0,0,0,0.08);
+    --transition: 0.18s ease;
+  }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    font-family: var(--font-body);
+    color: var(--gray-800);
+    background: var(--white);
+    font-size: 16px;
+    line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  /* ─── NAV ─── */
+  nav {
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    background: rgba(255,255,255,0.95);
+    backdrop-filter: blur(12px);
+    border-bottom: 1px solid var(--gray-100);
+    box-shadow: var(--shadow-nav);
+  }
+
+  .nav-inner {
+    max-width: 1120px;
+    margin: 0 auto;
+    padding: 0 24px;
+    height: 64px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  .logo {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    text-decoration: none;
+    cursor: pointer;
+  }
+
+  .logo-mark {
+    width: 36px;
+    height: 36px;
+    background: var(--navy);
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+  }
+
+  .logo-mark svg { width: 20px; height: 20px; }
+
+  .logo-text {
+    font-family: var(--font-head);
+    font-weight: 800;
+    font-size: 20px;
+    color: var(--navy);
+    letter-spacing: -0.3px;
+  }
+
+  .logo-text span { color: var(--orange); }
+
+  .nav-links {
+    display: flex;
+    align-items: center;
+    gap: 4px;
+    list-style: none;
+  }
+
+  .nav-links a {
+    font-family: var(--font-body);
+    font-size: 14px;
+    font-weight: 500;
+    color: var(--gray-600);
+    text-decoration: none;
+    padding: 8px 14px;
+    border-radius: var(--radius-sm);
+    transition: color var(--transition), background var(--transition);
+    cursor: pointer;
+  }
+
+  .nav-links a:hover, .nav-links a.active {
+    color: var(--navy);
+    background: var(--gray-50);
+  }
+
+  .nav-cta {
+    background: var(--orange) !important;
+    color: var(--white) !important;
+    border-radius: var(--radius-sm) !important;
+    padding: 8px 18px !important;
+    font-weight: 600 !important;
+  }
+
+  .nav-cta:hover {
+    background: var(--orange-light) !important;
+    color: var(--white) !important;
+  }
+
+  .hamburger {
+    display: none;
+    flex-direction: column;
+    gap: 5px;
+    cursor: pointer;
+    padding: 4px;
+    border: none;
+    background: none;
+  }
+
+  .hamburger span {
+    display: block;
+    width: 22px;
+    height: 2px;
+    background: var(--navy);
+    border-radius: 2px;
+    transition: var(--transition);
+  }
+
+  /* ─── PAGES ─── */
+  .page { display: none; }
+  .page.active { display: block; }
+
+  /* ─── SECTIONS ─── */
+  .section {
+    padding: 80px 24px;
+    max-width: 1120px;
+    margin: 0 auto;
+  }
+
+  .section-alt {
+    background: var(--gray-50);
+  }
+
+  .section-alt .section {
+    max-width: 100%;
+    padding-left: 0;
+    padding-right: 0;
+  }
+
+  .section-alt-inner {
+    max-width: 1120px;
+    margin: 0 auto;
+    padding: 80px 24px;
+  }
+
+  .eyebrow {
+    font-family: var(--font-head);
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    color: var(--orange);
+    margin-bottom: 12px;
+  }
+
+  h1, h2, h3, h4 { font-family: var(--font-head); color: var(--navy); line-height: 1.2; }
+
+  h1 { font-size: clamp(36px, 5vw, 60px); font-weight: 800; letter-spacing: -1.5px; }
+  h2 { font-size: clamp(28px, 3.5vw, 40px); font-weight: 700; letter-spacing: -0.8px; }
+  h3 { font-size: 20px; font-weight: 600; letter-spacing: -0.3px; }
+  h4 { font-size: 16px; font-weight: 600; }
+
+  p { color: var(--gray-600); line-height: 1.7; }
+
+  .text-center { text-align: center; }
+
+  .lead {
+    font-size: 18px;
+    color: var(--gray-600);
+    line-height: 1.7;
+    max-width: 560px;
+  }
+
+  /* ─── BUTTONS ─── */
+  .btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    font-family: var(--font-head);
+    font-weight: 600;
+    font-size: 15px;
+    padding: 12px 24px;
+    border-radius: var(--radius-sm);
+    border: none;
+    cursor: pointer;
+    text-decoration: none;
+    transition: all var(--transition);
+    white-space: nowrap;
+  }
+
+  .btn-primary {
+    background: var(--orange);
+    color: var(--white);
+  }
+
+  .btn-primary:hover { background: var(--orange-light); transform: translateY(-1px); }
+
+  .btn-outline {
+    background: transparent;
+    color: var(--navy);
+    border: 1.5px solid var(--gray-200);
+  }
+
+  .btn-outline:hover { border-color: var(--navy); background: var(--gray-50); }
+
+  .btn-navy {
+    background: var(--navy);
+    color: var(--white);
+  }
+
+  .btn-navy:hover { background: var(--navy-light); transform: translateY(-1px); }
+
+  /* ─── HERO ─── */
+  .hero {
+    position: relative;
+    padding: 100px 24px 80px;
+    overflow: hidden;
+    background: var(--navy);
+  }
+
+  .hero-grid {
+    position: absolute;
+    inset: 0;
+    opacity: 0.04;
+    background-image:
+      linear-gradient(var(--white) 1px, transparent 1px),
+      linear-gradient(90deg, var(--white) 1px, transparent 1px);
+    background-size: 48px 48px;
+  }
+
+  .hero-inner {
+    position: relative;
+    max-width: 1120px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 64px;
+    align-items: center;
+  }
+
+  .hero-content h1 { color: var(--white); margin-bottom: 24px; }
+
+  .hero-content h1 em {
+    color: var(--orange);
+    font-style: normal;
+  }
+
+  .hero-content .lead {
+    color: rgba(255,255,255,0.72);
+    margin-bottom: 36px;
+    max-width: 480px;
+  }
+
+  .hero-btns { display: flex; gap: 12px; flex-wrap: wrap; }
+
+  .hero-visual {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+  }
+
+  .hero-card-stack {
+    display: grid;
+    gap: 12px;
+    width: 100%;
+    max-width: 400px;
+  }
+
+  .hero-stat-card {
+    background: rgba(255,255,255,0.06);
+    border: 1px solid rgba(255,255,255,0.12);
+    border-radius: var(--radius-md);
+    padding: 20px 24px;
+    display: flex;
+    align-items: center;
+    gap: 16px;
+  }
+
+  .hero-stat-icon {
+    width: 48px;
+    height: 48px;
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    font-size: 22px;
+  }
+
+  .hero-stat-icon.orange { background: rgba(245,98,46,0.2); }
+  .hero-stat-icon.teal { background: rgba(20,184,166,0.15); }
+  .hero-stat-icon.purple { background: rgba(139,92,246,0.15); }
+
+  .hero-stat-label { font-size: 13px; color: rgba(255,255,255,0.5); margin-bottom: 2px; font-family: var(--font-body); }
+  .hero-stat-value { font-family: var(--font-head); font-weight: 700; font-size: 22px; color: var(--white); }
+
+  /* ─── TRUST BAR ─── */
+  .trust-bar {
+    background: var(--white);
+    border-bottom: 1px solid var(--gray-100);
+    padding: 20px 24px;
+  }
+
+  .trust-bar-inner {
+    max-width: 1120px;
+    margin: 0 auto;
+    display: flex;
+    gap: 40px;
+    align-items: center;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  .trust-item {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 14px;
+    font-weight: 500;
+    color: var(--gray-600);
+    white-space: nowrap;
+  }
+
+  .trust-item .dot {
+    width: 7px;
+    height: 7px;
+    border-radius: 50%;
+    background: var(--orange);
+    flex-shrink: 0;
+  }
+
+  /* ─── CARDS ─── */
+  .card-grid {
+    display: grid;
+    gap: 24px;
+  }
+
+  .card-grid-3 { grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); }
+  .card-grid-4 { grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); }
+  .card-grid-2 { grid-template-columns: repeat(auto-fit, minmax(340px, 1fr)); }
+
+  .card {
+    background: var(--white);
+    border: 1px solid var(--gray-100);
+    border-radius: var(--radius-md);
+    padding: 28px;
+    box-shadow: var(--shadow-card);
+    transition: box-shadow var(--transition), transform var(--transition);
+  }
+
+  .card:hover {
+    box-shadow: 0 4px 20px rgba(0,0,0,0.10);
+    transform: translateY(-2px);
+  }
+
+  .card-icon {
+    width: 52px;
+    height: 52px;
+    border-radius: 14px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 24px;
+    margin-bottom: 20px;
+  }
+
+  .card-icon.orange-bg { background: var(--orange-pale); }
+  .card-icon.navy-bg { background: #EDF0F7; }
+
+  .card h3 { margin-bottom: 10px; }
+  .card p { font-size: 15px; }
+
+  /* ─── SECTION HEADER ─── */
+  .section-header {
+    margin-bottom: 52px;
+  }
+
+  .section-header h2 { margin-bottom: 16px; }
+  .section-header .lead { max-width: 520px; }
+  .section-header.centered { text-align: center; }
+  .section-header.centered .lead { margin: 0 auto; }
+
+  /* ─── FOOTER ─── */
+  footer {
+    background: var(--navy-dark);
+    color: rgba(255,255,255,0.6);
+    padding: 64px 24px 32px;
+  }
+
+  .footer-inner {
+    max-width: 1120px;
+    margin: 0 auto;
+  }
+
+  .footer-top {
+    display: grid;
+    grid-template-columns: 2fr 1fr 1fr 1fr;
+    gap: 48px;
+    margin-bottom: 48px;
+  }
+
+  .footer-brand .logo-text { color: var(--white); font-size: 22px; }
+  .footer-brand .logo-text span { color: var(--orange); }
+  .footer-brand p { margin-top: 14px; font-size: 14px; line-height: 1.7; max-width: 280px; }
+
+  .footer-col h4 {
+    font-family: var(--font-head);
+    font-size: 13px;
+    font-weight: 700;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    color: rgba(255,255,255,0.9);
+    margin-bottom: 16px;
+  }
+
+  .footer-col ul { list-style: none; display: flex; flex-direction: column; gap: 10px; }
+
+  .footer-col ul a {
+    color: rgba(255,255,255,0.55);
+    text-decoration: none;
+    font-size: 14px;
+    cursor: pointer;
+    transition: color var(--transition);
+  }
+
+  .footer-col ul a:hover { color: var(--white); }
+
+  .footer-bottom {
+    border-top: 1px solid rgba(255,255,255,0.08);
+    padding-top: 24px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 12px;
+    font-size: 13px;
+  }
+
+  .footer-bottom a {
+    color: rgba(255,255,255,0.45);
+    text-decoration: none;
+    cursor: pointer;
+    transition: color var(--transition);
+  }
+
+  .footer-bottom a:hover { color: var(--white); }
+
+  .footer-legal { display: flex; gap: 20px; }
+
+  /* ─── PAGE: HOME specific ─── */
+  .how-step {
+    display: flex;
+    gap: 20px;
+    align-items: flex-start;
+    padding: 28px;
+    border-radius: var(--radius-md);
+    border: 1px solid var(--gray-100);
+    background: var(--white);
+    box-shadow: var(--shadow-card);
+  }
+
+  .step-num {
+    font-family: var(--font-head);
+    font-size: 32px;
+    font-weight: 800;
+    color: var(--orange);
+    line-height: 1;
+    flex-shrink: 0;
+    min-width: 40px;
+  }
+
+  .cta-band {
+    background: var(--navy);
+    padding: 80px 24px;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .cta-band .hero-grid { opacity: 0.03; }
+
+  .cta-band-inner {
+    position: relative;
+    max-width: 640px;
+    margin: 0 auto;
+    text-align: center;
+  }
+
+  .cta-band h2 { color: var(--white); margin-bottom: 16px; }
+  .cta-band p { color: rgba(255,255,255,0.65); margin-bottom: 32px; font-size: 17px; }
+
+  /* ─── PAGE: ABOUT ─── */
+  .about-hero {
+    background: var(--gray-50);
+    padding: 80px 24px;
+    border-bottom: 1px solid var(--gray-100);
+  }
+
+  .about-hero-inner {
+    max-width: 1120px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 64px;
+    align-items: center;
+  }
+
+  .value-card {
+    padding: 24px;
+    border-left: 3px solid var(--orange);
+    background: var(--gray-50);
+    border-radius: 0 var(--radius-sm) var(--radius-sm) 0;
+  }
+
+  .value-card h4 { color: var(--navy); margin-bottom: 6px; }
+  .value-card p { font-size: 14px; }
+
+  .team-card {
+    text-align: center;
+    padding: 32px 24px;
+    border: 1px solid var(--gray-100);
+    border-radius: var(--radius-md);
+    background: var(--white);
+    box-shadow: var(--shadow-card);
+  }
+
+  .avatar {
+    width: 72px;
+    height: 72px;
+    border-radius: 50%;
+    background: var(--navy);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: var(--font-head);
+    font-weight: 700;
+    font-size: 22px;
+    color: var(--white);
+    margin: 0 auto 16px;
+  }
+
+  .team-card h4 { margin-bottom: 4px; }
+  .team-card .role { font-size: 13px; color: var(--orange); font-weight: 500; margin-bottom: 12px; }
+  .team-card p { font-size: 14px; }
+
+  /* ─── PAGE: SERVICES ─── */
+  .service-card {
+    display: flex;
+    gap: 20px;
+    padding: 24px;
+    border: 1px solid var(--gray-100);
+    border-radius: var(--radius-md);
+    background: var(--white);
+    box-shadow: var(--shadow-card);
+    transition: box-shadow var(--transition), transform var(--transition);
+    cursor: default;
+  }
+
+  .service-card:hover {
+    box-shadow: 0 4px 20px rgba(0,0,0,0.10);
+    transform: translateY(-2px);
+  }
+
+  .service-icon {
+    width: 56px;
+    height: 56px;
+    border-radius: 14px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 26px;
+    flex-shrink: 0;
+    background: var(--orange-pale);
+  }
+
+  .badge {
+    display: inline-block;
+    font-size: 11px;
+    font-weight: 600;
+    padding: 3px 10px;
+    border-radius: 20px;
+    margin-top: 10px;
+  }
+
+  .badge-coming { background: var(--gray-100); color: var(--gray-600); }
+  .badge-available { background: #ECFDF5; color: #065F46; }
+
+  /* ─── PAGE: FAQ ─── */
+  .faq-item {
+    border-bottom: 1px solid var(--gray-100);
+  }
+
+  .faq-question {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 0;
+    cursor: pointer;
+    font-family: var(--font-head);
+    font-weight: 600;
+    font-size: 16px;
+    color: var(--navy);
+    gap: 16px;
+    user-select: none;
+  }
+
+  .faq-chevron {
+    width: 22px;
+    height: 22px;
+    border-radius: 50%;
+    border: 1.5px solid var(--gray-200);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    transition: all var(--transition);
+    color: var(--gray-400);
+    font-size: 12px;
+  }
+
+  .faq-item.open .faq-chevron {
+    background: var(--orange);
+    border-color: var(--orange);
+    color: var(--white);
+    transform: rotate(180deg);
+  }
+
+  .faq-answer {
+    display: none;
+    padding-bottom: 20px;
+    color: var(--gray-600);
+    font-size: 15px;
+    line-height: 1.75;
+    max-width: 680px;
+  }
+
+  .faq-item.open .faq-answer { display: block; }
+
+  /* ─── PAGE: CONTACT ─── */
+  .contact-grid {
+    display: grid;
+    grid-template-columns: 1fr 1.6fr;
+    gap: 64px;
+    align-items: start;
+  }
+
+  .contact-info-item {
+    display: flex;
+    gap: 16px;
+    align-items: flex-start;
+    margin-bottom: 28px;
+  }
+
+  .contact-icon {
+    width: 44px;
+    height: 44px;
+    border-radius: 12px;
+    background: var(--orange-pale);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    font-size: 20px;
+  }
+
+  .contact-info-item h4 { margin-bottom: 4px; }
+  .contact-info-item p { font-size: 14px; }
+
+  .contact-form {
+    background: var(--white);
+    border: 1px solid var(--gray-100);
+    border-radius: var(--radius-md);
+    padding: 36px;
+    box-shadow: var(--shadow-card);
+  }
+
+  .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+
+  .form-group { margin-bottom: 20px; }
+
+  .form-group label {
+    display: block;
+    font-size: 13px;
+    font-weight: 600;
+    color: var(--navy);
+    margin-bottom: 7px;
+    font-family: var(--font-head);
+  }
+
+  .form-group input,
+  .form-group select,
+  .form-group textarea {
+    width: 100%;
+    font-family: var(--font-body);
+    font-size: 15px;
+    color: var(--gray-800);
+    background: var(--gray-50);
+    border: 1.5px solid var(--gray-200);
+    border-radius: var(--radius-sm);
+    padding: 11px 14px;
+    outline: none;
+    transition: border-color var(--transition);
+    resize: vertical;
+  }
+
+  .form-group input:focus,
+  .form-group select:focus,
+  .form-group textarea:focus {
+    border-color: var(--navy);
+    background: var(--white);
+  }
+
+  .form-success {
+    display: none;
+    text-align: center;
+    padding: 24px;
+    background: #ECFDF5;
+    border-radius: var(--radius-sm);
+    color: #065F46;
+    font-weight: 600;
+    margin-top: 12px;
+  }
+
+  /* ─── LEGAL PAGES ─── */
+  .legal-content {
+    max-width: 720px;
+    margin: 0 auto;
+    padding: 60px 24px 100px;
+  }
+
+  .legal-content h1 { font-size: 36px; margin-bottom: 8px; }
+  .legal-content .updated { font-size: 13px; color: var(--gray-400); margin-bottom: 40px; }
+  .legal-content h2 { font-size: 20px; margin: 36px 0 12px; }
+  .legal-content p { margin-bottom: 16px; font-size: 15px; }
+  .legal-content ul { padding-left: 20px; color: var(--gray-600); margin-bottom: 16px; }
+  .legal-content ul li { margin-bottom: 8px; font-size: 15px; line-height: 1.65; }
+  .legal-content a { color: var(--orange); text-decoration: none; }
+
+  /* ─── AK SYSTEMS ─── */
+  .ak-hero {
+    background: var(--navy-dark);
+    padding: 80px 24px;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .ak-hero .hero-grid { opacity: 0.04; }
+
+  .ak-hero-inner {
+    position: relative;
+    max-width: 1120px;
+    margin: 0 auto;
+  }
+
+  .ak-hero h1 { color: var(--white); margin-bottom: 20px; }
+  .ak-hero .lead { color: rgba(255,255,255,0.65); margin-bottom: 32px; }
+
+  .ak-product-card {
+    border: 1px solid rgba(255,255,255,0.1);
+    background: rgba(255,255,255,0.05);
+    border-radius: var(--radius-md);
+    padding: 28px;
+    transition: background var(--transition);
+  }
+
+  .ak-product-card:hover { background: rgba(255,255,255,0.08); }
+
+  .ak-product-card h3 { color: var(--white); margin-bottom: 8px; }
+  .ak-product-card p { color: rgba(255,255,255,0.55); font-size: 15px; }
+
+  .ak-pill {
+    display: inline-block;
+    font-size: 11px;
+    font-weight: 600;
+    padding: 4px 12px;
+    border-radius: 20px;
+    margin-bottom: 16px;
+  }
+
+  .ak-pill-active { background: rgba(245,98,46,0.2); color: var(--orange-light); }
+  .ak-pill-future { background: rgba(255,255,255,0.1); color: rgba(255,255,255,0.5); }
+
+  /* ─── PAGE HERO (simple) ─── */
+  .page-hero {
+    background: var(--gray-50);
+    border-bottom: 1px solid var(--gray-100);
+    padding: 60px 24px;
+  }
+
+  .page-hero-inner {
+    max-width: 1120px;
+    margin: 0 auto;
+  }
+
+  /* ─── MOBILE NAV ─── */
+  .mobile-menu {
+    display: none;
+    position: fixed;
+    inset: 0;
+    background: var(--white);
+    z-index: 200;
+    flex-direction: column;
+    padding: 24px;
+  }
+
+  .mobile-menu.open { display: flex; }
+
+  .mobile-menu-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 32px;
+  }
+
+  .mobile-close {
+    width: 36px;
+    height: 36px;
+    border: 1px solid var(--gray-200);
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    background: none;
+    font-size: 18px;
+    color: var(--gray-600);
+  }
+
+  .mobile-nav-links { display: flex; flex-direction: column; gap: 4px; }
+
+  .mobile-nav-links a {
+    font-family: var(--font-head);
+    font-size: 17px;
+    font-weight: 600;
+    color: var(--navy);
+    text-decoration: none;
+    padding: 12px 16px;
+    border-radius: var(--radius-sm);
+    cursor: pointer;
+    transition: background var(--transition);
+  }
+
+  .mobile-nav-links a:hover { background: var(--gray-50); }
+
+  /* ─── RESPONSIVE ─── */
+  @media (max-width: 768px) {
+    .nav-links { display: none; }
+    .hamburger { display: flex; }
+    .hero-inner { grid-template-columns: 1fr; }
+    .hero-visual { display: none; }
+    .about-hero-inner { grid-template-columns: 1fr; }
+    .contact-grid { grid-template-columns: 1fr; }
+    .footer-top { grid-template-columns: 1fr 1fr; }
+    .form-row { grid-template-columns: 1fr; }
+    h1 { letter-spacing: -0.5px; }
+  }
+
+  @media (max-width: 480px) {
+    .footer-top { grid-template-columns: 1fr; }
+    .section { padding: 60px 20px; }
+    .hero { padding: 72px 20px 60px; }
+  }
+
+  /* ─── MISC ─── */
+  .divider { height: 1px; background: var(--gray-100); margin: 0; border: none; }
+
+  .orange-text { color: var(--orange); }
+
+  .stat-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+    gap: 24px;
+  }
+
+  .stat-item {
+    padding: 28px 24px;
+    border-radius: var(--radius-md);
+    border: 1px solid var(--gray-100);
+    background: var(--white);
+    box-shadow: var(--shadow-card);
+  }
+
+  .stat-num {
+    font-family: var(--font-head);
+    font-size: 40px;
+    font-weight: 800;
+    color: var(--navy);
+    line-height: 1;
+    margin-bottom: 6px;
+  }
+
+  .stat-num em { color: var(--orange); font-style: normal; }
+
+  .stat-label { font-size: 14px; color: var(--gray-600); }
+
+  .pill-tags { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 12px; }
+  .pill-tag {
+    font-size: 12px;
+    font-weight: 500;
+    padding: 5px 12px;
+    border-radius: 20px;
+    background: var(--gray-100);
+    color: var(--gray-600);
+  }
+
+  .pill-tag.highlighted { background: var(--orange-pale); color: var(--orange); }
+
+  .two-col-prose {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 48px;
+    align-items: start;
+  }
+
+  @media (max-width: 640px) {
+    .two-col-prose { grid-template-columns: 1fr; }
+  }
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <div class="nav-inner">
+    <a class="logo" onclick="navigate('home')">
+      <div class="logo-mark">
+        <svg viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <circle cx="10" cy="10" r="3" fill="#F5622E"/>
+          <path d="M10 2C5.58 2 2 5.58 2 10s3.58 8 8 8 8-3.58 8-8-3.58-8-8-8zm0 2a6 6 0 016 6 6 6 0 01-6 6A6 6 0 014 10a6 6 0 016-6z" fill="white" opacity="0.6"/>
+          <path d="M10 6v4l3 2" stroke="#F5622E" stroke-width="1.5" stroke-linecap="round"/>
+        </svg>
+      </div>
+      <span class="logo-text">roz<span>gar</span></span>
+    </a>
+    <ul class="nav-links" id="navLinks">
+      <li><a onclick="navigate('home')" data-page="home">Home</a></li>
+      <li><a onclick="navigate('about')" data-page="about">About</a></li>
+      <li><a onclick="navigate('services')" data-page="services">Services</a></li>
+      <li><a onclick="navigate('faqs')" data-page="faqs">FAQs</a></li>
+      <li><a onclick="navigate('ak')" data-page="ak">AK Systems</a></li>
+      <li><a onclick="navigate('contact')" data-page="contact" class="nav-cta">Contact Us</a></li>
+    </ul>
+    <button class="hamburger" onclick="toggleMobile()" aria-label="Open menu">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</nav>
+
+<!-- MOBILE MENU -->
+<div class="mobile-menu" id="mobileMenu">
+  <div class="mobile-menu-header">
+    <a class="logo" onclick="navigate('home'); toggleMobile();">
+      <div class="logo-mark">
+        <svg viewBox="0 0 20 20" fill="none"><circle cx="10" cy="10" r="3" fill="#F5622E"/><path d="M10 2C5.58 2 2 5.58 2 10s3.58 8 8 8 8-3.58 8-8-3.58-8-8-8zm0 2a6 6 0 016 6 6 6 0 01-6 6A6 6 0 014 10a6 6 0 016-6z" fill="white" opacity="0.6"/></svg>
+      </div>
+      <span class="logo-text">roz<span>gar</span></span>
+    </a>
+    <button class="mobile-close" onclick="toggleMobile()">✕</button>
+  </div>
+  <div class="mobile-nav-links">
+    <a onclick="navigate('home'); toggleMobile();">Home</a>
+    <a onclick="navigate('about'); toggleMobile();">About</a>
+    <a onclick="navigate('services'); toggleMobile();">Services</a>
+    <a onclick="navigate('faqs'); toggleMobile();">FAQs</a>
+    <a onclick="navigate('ak'); toggleMobile();">AK Systems</a>
+    <a onclick="navigate('contact'); toggleMobile();">Contact Us</a>
+    <a onclick="navigate('terms'); toggleMobile();">Terms of Service</a>
+    <a onclick="navigate('privacy'); toggleMobile();">Privacy Policy</a>
+  </div>
+</div>
+
+<!-- ═══════════════════════════════════════
+     PAGE: HOME
+═══════════════════════════════════════ -->
+<div class="page active" id="page-home">
+
+  <!-- HERO -->
+  <section class="hero">
+    <div class="hero-grid"></div>
+    <div class="hero-inner">
+      <div class="hero-content">
+        <div class="eyebrow" style="color: rgba(245,98,46,0.85);">Launching in Karachi</div>
+        <h1>Pakistan's trusted platform for skilled <em>home services</em></h1>
+        <p class="lead">Rozgar connects households with verified, background-checked kaarigar — plumbers, electricians, carpenters, and more — at fair, transparent prices.</p>
+        <div class="hero-btns">
+          <a class="btn btn-primary" onclick="navigate('services')">Explore Services</a>
+          <a class="btn" style="background:rgba(255,255,255,0.1);color:white;border:1px solid rgba(255,255,255,0.2);" onclick="navigate('contact')">Get Early Access</a>
+        </div>
+      </div>
+      <div class="hero-visual">
+        <div class="hero-card-stack">
+          <div class="hero-stat-card">
+            <div class="hero-stat-icon orange">🔧</div>
+            <div>
+              <div class="hero-stat-label">Skilled trades covered</div>
+              <div class="hero-stat-value">10+ Categories</div>
+            </div>
+          </div>
+          <div class="hero-stat-card">
+            <div class="hero-stat-icon teal">✅</div>
+            <div>
+              <div class="hero-stat-label">Worker verification</div>
+              <div class="hero-stat-value">CNIC + Background Check</div>
+            </div>
+          </div>
+          <div class="hero-stat-card">
+            <div class="hero-stat-icon purple">📍</div>
+            <div>
+              <div class="hero-stat-label">Launch areas</div>
+              <div class="hero-stat-value">Defence · Clifton · Gulshan</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- TRUST BAR -->
+  <div class="trust-bar">
+    <div class="trust-bar-inner">
+      <div class="trust-item"><span class="dot"></span>CNIC-Verified Workers</div>
+      <div class="trust-item"><span class="dot"></span>Live Job Tracking</div>
+      <div class="trust-item"><span class="dot"></span>Secure In-App Payments</div>
+      <div class="trust-item"><span class="dot"></span>Post-Job Guarantee</div>
+      <div class="trust-item"><span class="dot"></span>Transparent Pricing</div>
+    </div>
+  </div>
+
+  <!-- HOW IT WORKS -->
+  <div class="section-alt">
+    <div class="section-alt-inner">
+      <div class="section-header centered">
+        <div class="eyebrow">How Rozgar Works</div>
+        <h2>Book a professional in minutes</h2>
+        <p class="lead">No more haggling on the street or calling around. Rozgar makes finding a trusted kaarigar as easy as ordering food online.</p>
+      </div>
+      <div class="card-grid card-grid-4">
+        <div class="how-step">
+          <div class="step-num">01</div>
+          <div>
+            <h4 style="margin-bottom:6px;">Pick a service</h4>
+            <p style="font-size:14px;">Choose from plumbing, electrical, carpentry, AC servicing, painting, and more.</p>
+          </div>
+        </div>
+        <div class="how-step">
+          <div class="step-num">02</div>
+          <div>
+            <h4 style="margin-bottom:6px;">Get matched</h4>
+            <p style="font-size:14px;">We surface verified workers near you based on skill, rating, and availability.</p>
+          </div>
+        </div>
+        <div class="how-step">
+          <div class="step-num">03</div>
+          <div>
+            <h4 style="margin-bottom:6px;">Agree on price</h4>
+            <p style="font-size:14px;">See upfront quotes and accept or negotiate — no hidden charges, ever.</p>
+          </div>
+        </div>
+        <div class="how-step">
+          <div class="step-num">04</div>
+          <div>
+            <h4 style="margin-bottom:6px;">Pay safely</h4>
+            <p style="font-size:14px;">Pay through the app after the job is done to your satisfaction.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- WHY ROZGAR -->
+  <div class="section">
+    <div class="section-header">
+      <div class="eyebrow">Why Rozgar</div>
+      <h2>The problems we're solving</h2>
+      <p class="lead">Pakistan's home services market is massive — and largely unorganised. We're changing that.</p>
+    </div>
+    <div class="card-grid card-grid-3">
+      <div class="card">
+        <div class="card-icon orange-bg">🔐</div>
+        <h3>Verified Trust</h3>
+        <p>Every kaarigar is identity-verified with CNIC and selfie, giving you confidence before they step through your door.</p>
+      </div>
+      <div class="card">
+        <div class="card-icon orange-bg">💸</div>
+        <h3>Fair Prices</h3>
+        <p>An InDrive-style negotiation system means you set a budget and workers respond — market-driven, transparent rates.</p>
+      </div>
+      <div class="card">
+        <div class="card-icon orange-bg">📍</div>
+        <h3>Real-Time Tracking</h3>
+        <p>Know exactly where your worker is and when they'll arrive. No more "5 minutes bhai" turning into an hour.</p>
+      </div>
+      <div class="card">
+        <div class="card-icon navy-bg">⭐</div>
+        <h3>Community Ratings</h3>
+        <p>Neighbour reviews and ratings help you pick the best professional for your home, not just whoever answered first.</p>
+      </div>
+      <div class="card">
+        <div class="card-icon navy-bg">🛡️</div>
+        <h3>Post-Job Guarantee</h3>
+        <p>Not satisfied? We back every job with a quality guarantee and clear dispute resolution process.</p>
+      </div>
+      <div class="card">
+        <div class="card-icon navy-bg">💼</div>
+        <h3>Better Livelihoods</h3>
+        <p>Kaarigar get consistent work, digital income records, and a platform to grow their reputation and earnings.</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- STATS -->
+  <div class="section-alt">
+    <div class="section-alt-inner">
+      <div class="section-header centered">
+        <div class="eyebrow">The Opportunity</div>
+        <h2>A market ready for disruption</h2>
+      </div>
+      <div class="stat-grid">
+        <div class="stat-item">
+          <div class="stat-num">220<em>M+</em></div>
+          <div class="stat-label">Pakistanis, most without reliable home service access</div>
+        </div>
+        <div class="stat-item">
+          <div class="stat-num">$2<em>B+</em></div>
+          <div class="stat-label">Estimated informal home services market size</div>
+        </div>
+        <div class="stat-item">
+          <div class="stat-num">15<em>M+</em></div>
+          <div class="stat-label">Blue-collar workers looking for consistent digital income</div>
+        </div>
+        <div class="stat-item">
+          <div class="stat-num">0<em>%</em></div>
+          <div class="stat-label">Organised, verified platform serving this gap today</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- CTA BAND -->
+  <div class="cta-band">
+    <div class="hero-grid"></div>
+    <div class="cta-band-inner">
+      <div class="eyebrow">Coming Soon</div>
+      <h2>Be the first to know when Rozgar launches</h2>
+      <p>We're starting in Defence, Clifton, and Gulshan-e-Iqbal. Join the waitlist and get early access.</p>
+      <a class="btn btn-primary" onclick="navigate('contact')">Join the Waitlist →</a>
+    </div>
+  </div>
+
+</div>
+
+
+<!-- ═══════════════════════════════════════
+     PAGE: ABOUT
+═══════════════════════════════════════ -->
+<div class="page" id="page-about">
+
+  <div class="about-hero">
+    <div class="about-hero-inner">
+      <div>
+        <div class="eyebrow">Our Story</div>
+        <h1>Built in Karachi, for Karachi</h1>
+        <p class="lead" style="margin-top:16px;">Rozgar was born out of a simple frustration: finding a reliable plumber or electrician in Pakistan is harder than it should be. We're here to fix that.</p>
+      </div>
+      <div>
+        <p style="margin-bottom:16px;">The problem isn't that skilled workers don't exist — Pakistan has millions of talented kaarigar. The problem is <strong>trust, discovery, and fair payment</strong>.</p>
+        <p>Homeowners can't verify who's coming into their home. Workers can't build a reputation beyond word-of-mouth. Payments are cash-only and dispute-prone. Rozgar is the infrastructure layer this market has been missing.</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="section">
+    <div class="section-header">
+      <div class="eyebrow">Our Mission</div>
+      <h2>Organise Pakistan's informal skilled workforce</h2>
+    </div>
+    <div class="two-col-prose">
+      <div>
+        <p style="margin-bottom:16px;">We believe every Pakistani household deserves access to trustworthy, skilled professionals — and every skilled worker deserves a platform to earn fairly and build a career.</p>
+        <p>Rozgar is not just an app. It's a trust layer between millions of homes and the kaarigar who serve them. By bringing identity verification, transparent pricing, and in-app payments to an entirely informal market, we're building the foundation for a more organised, more equitable services economy.</p>
+      </div>
+      <div style="display:flex;flex-direction:column;gap:12px;">
+        <div class="value-card">
+          <h4>Trust First</h4>
+          <p>We don't onboard unverified workers. Every partner goes through identity and skills verification before their first job.</p>
+        </div>
+        <div class="value-card">
+          <h4>Fair for Both Sides</h4>
+          <p>A platform that's good for customers but bad for workers isn't a platform worth building. We design for both.</p>
+        </div>
+        <div class="value-card">
+          <h4>Start Local, Scale Right</h4>
+          <p>We're starting hyper-local in three Karachi neighbourhoods and getting the product right before expanding.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <hr class="divider">
+
+  <div class="section">
+    <div class="section-header">
+      <div class="eyebrow">The Team</div>
+      <h2>Who's building Rozgar</h2>
+    </div>
+    <div class="card-grid card-grid-3">
+      <div class="team-card">
+        <div class="avatar">AK</div>
+        <h4>Abdullah K.</h4>
+        <div class="role">Founder & CEO</div>
+        <p style="font-size:14px;">CS student at University of Karachi (UBIT) and founder of AK Systems. Building Pakistan's first verified blue-collar marketplace.</p>
+      </div>
+      <div class="team-card">
+        <div class="avatar" style="background:var(--orange);">?</div>
+        <h4>Open Role</h4>
+        <div class="role">Co-Founder / CTO</div>
+        <p style="font-size:14px;">We're looking for a technical co-founder passionate about building for Pakistan's emerging digital economy.</p>
+      </div>
+      <div class="team-card">
+        <div class="avatar" style="background:var(--gray-400);">?</div>
+        <h4>Open Role</h4>
+        <div class="role">Head of Operations</div>
+        <p style="font-size:14px;">Someone who knows Karachi's neighbourhoods and can build our ground-level worker onboarding network.</p>
+      </div>
+    </div>
+    <p style="margin-top:24px;font-size:15px;color:var(--gray-600);">Interested in joining the founding team? <a style="color:var(--orange);cursor:pointer;" onclick="navigate('contact')">Get in touch →</a></p>
+  </div>
+
+  <div class="cta-band">
+    <div class="hero-grid"></div>
+    <div class="cta-band-inner">
+      <h2>We're just getting started</h2>
+      <p>Rozgar is in active development. Follow the journey and get early access when we launch.</p>
+      <a class="btn btn-primary" onclick="navigate('contact')">Stay in the Loop →</a>
+    </div>
+  </div>
+
+</div>
+
+
+<!-- ═══════════════════════════════════════
+     PAGE: SERVICES
+═══════════════════════════════════════ -->
+<div class="page" id="page-services">
+
+  <div class="page-hero">
+    <div class="page-hero-inner">
+      <div class="eyebrow">What We Offer</div>
+      <h1>Services we connect you with</h1>
+      <p class="lead" style="margin-top:12px;">Verified kaarigar for every home need. Starting with the most in-demand trades in Karachi.</p>
+    </div>
+  </div>
+
+  <div class="section">
+    <div class="section-header">
+      <div class="eyebrow">Launch Categories</div>
+      <h2>Phase 1 — Emergency & Essential Services</h2>
+      <p class="lead">Our launch focuses on the highest-demand, most time-sensitive categories where trust and speed matter most.</p>
+    </div>
+    <div class="card-grid card-grid-2" style="margin-bottom:40px;">
+      <div class="service-card">
+        <div class="service-icon">🔧</div>
+        <div>
+          <span class="badge badge-available">Available at Launch</span>
+          <h3 style="margin-top:8px;margin-bottom:6px;">Plumbing</h3>
+          <p style="font-size:14px;">Leak repairs, pipe fitting, blocked drains, water heater installation, tap replacements and all residential plumbing needs.</p>
+          <div class="pill-tags">
+            <span class="pill-tag">Leak Repair</span>
+            <span class="pill-tag">Drain Unblocking</span>
+            <span class="pill-tag">Water Heater</span>
+            <span class="pill-tag">Tap Fitting</span>
+          </div>
+        </div>
+      </div>
+      <div class="service-card">
+        <div class="service-icon">⚡</div>
+        <div>
+          <span class="badge badge-available">Available at Launch</span>
+          <h3 style="margin-top:8px;margin-bottom:6px;">Electrical</h3>
+          <p style="font-size:14px;">Wiring, load management, socket and switch installation, fan fitting, UPS/inverter setup, and fault diagnosis.</p>
+          <div class="pill-tags">
+            <span class="pill-tag">Wiring</span>
+            <span class="pill-tag">Socket Install</span>
+            <span class="pill-tag">Fan Fitting</span>
+            <span class="pill-tag">UPS Setup</span>
+          </div>
+        </div>
+      </div>
+      <div class="service-card">
+        <div class="service-icon">❄️</div>
+        <div>
+          <span class="badge badge-available">Available at Launch</span>
+          <h3 style="margin-top:8px;margin-bottom:6px;">AC Servicing</h3>
+          <p style="font-size:14px;">AC servicing, gas charging, installation, repair, and seasonal maintenance for split and window units.</p>
+          <div class="pill-tags">
+            <span class="pill-tag highlighted">High Demand</span>
+            <span class="pill-tag">Servicing</span>
+            <span class="pill-tag">Gas Charging</span>
+            <span class="pill-tag">Installation</span>
+          </div>
+        </div>
+      </div>
+      <div class="service-card">
+        <div class="service-icon">🪚</div>
+        <div>
+          <span class="badge badge-available">Available at Launch</span>
+          <h3 style="margin-top:8px;margin-bottom:6px;">Carpentry</h3>
+          <p style="font-size:14px;">Furniture assembly, door and window repair, custom woodwork, cabinet fitting, and general carpentry.</p>
+          <div class="pill-tags">
+            <span class="pill-tag">Furniture Fix</span>
+            <span class="pill-tag">Door Repair</span>
+            <span class="pill-tag">Cabinets</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="section-header" style="margin-top:60px;">
+      <div class="eyebrow">Phase 2</div>
+      <h2>Coming next</h2>
+    </div>
+    <div class="card-grid card-grid-4">
+      <div class="service-card" style="flex-direction:column;gap:12px;">
+        <div style="font-size:28px;">🎨</div>
+        <div>
+          <span class="badge badge-coming">Phase 2</span>
+          <h4 style="margin-top:8px;">Painting</h4>
+          <p style="font-size:14px;">Interior and exterior painting, wall preparation, and finishing.</p>
+        </div>
+      </div>
+      <div class="service-card" style="flex-direction:column;gap:12px;">
+        <div style="font-size:28px;">🧹</div>
+        <div>
+          <span class="badge badge-coming">Phase 2</span>
+          <h4 style="margin-top:8px;">Deep Cleaning</h4>
+          <p style="font-size:14px;">Full-home, post-construction, and move-in/out deep cleaning.</p>
+        </div>
+      </div>
+      <div class="service-card" style="flex-direction:column;gap:12px;">
+        <div style="font-size:28px;">🚿</div>
+        <div>
+          <span class="badge badge-coming">Phase 2</span>
+          <h4 style="margin-top:8px;">Bathroom Tiling</h4>
+          <p style="font-size:14px;">Tile installation, grouting, waterproofing, and bathroom renovation.</p>
+        </div>
+      </div>
+      <div class="service-card" style="flex-direction:column;gap:12px;">
+        <div style="font-size:28px;">📡</div>
+        <div>
+          <span class="badge badge-coming">Phase 2</span>
+          <h4 style="margin-top:8px;">CCTV & Security</h4>
+          <p style="font-size:14px;">Camera installation, DVR setup, and basic home security systems.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="section-alt">
+    <div class="section-alt-inner">
+      <div class="section-header centered">
+        <div class="eyebrow">Worker Verification</div>
+        <h2>What makes a Rozgar-verified kaarigar</h2>
+      </div>
+      <div class="card-grid card-grid-3">
+        <div class="card text-center">
+          <div class="card-icon orange-bg" style="margin:0 auto 16px;">🪪</div>
+          <h3>Identity Verified</h3>
+          <p>CNIC scan and live selfie match — we confirm every worker is who they say they are.</p>
+        </div>
+        <div class="card text-center">
+          <div class="card-icon orange-bg" style="margin:0 auto 16px;">🛠️</div>
+          <h3>Skills Assessed</h3>
+          <p>Workers are onboarded only for the categories they can demonstrate competence in.</p>
+        </div>
+        <div class="card text-center">
+          <div class="card-icon orange-bg" style="margin:0 auto 16px;">⭐</div>
+          <h3>Continuously Rated</h3>
+          <p>Every job generates a customer review. Low-rated workers are reviewed and off-boarded.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</div>
+
+
+<!-- ═══════════════════════════════════════
+     PAGE: FAQs
+═══════════════════════════════════════ -->
+<div class="page" id="page-faqs">
+
+  <div class="page-hero">
+    <div class="page-hero-inner">
+      <div class="eyebrow">FAQ</div>
+      <h1>Frequently asked questions</h1>
+      <p class="lead" style="margin-top:12px;">Everything you need to know about Rozgar, how it works, and when it's coming.</p>
+    </div>
+  </div>
+
+  <div class="section">
+    <div style="max-width:720px;">
+
+      <div class="eyebrow" style="margin-bottom:20px;">For Customers</div>
+
+      <div class="faq-item" onclick="toggleFaq(this)">
+        <div class="faq-question">What is Rozgar? <div class="faq-chevron">▾</div></div>
+        <div class="faq-answer">Rozgar is a digital platform that connects Pakistani households with verified, skilled kaarigar — plumbers, electricians, carpenters, AC technicians, and more. Think of it as an Uber-style booking experience, but for home services, with full identity verification and in-app payment.</div>
+      </div>
+
+      <div class="faq-item" onclick="toggleFaq(this)">
+        <div class="faq-question">Is Rozgar available right now? <div class="faq-chevron">▾</div></div>
+        <div class="faq-answer">Rozgar is currently in development and preparing for its launch in Karachi. We are targeting select areas — Defence, Clifton, and Gulshan-e-Iqbal — for our initial rollout. You can join the waitlist through our Contact page to be notified the moment we go live.</div>
+      </div>
+
+      <div class="faq-item" onclick="toggleFaq(this)">
+        <div class="faq-question">How do I book a service? <div class="faq-chevron">▾</div></div>
+        <div class="faq-answer">Once launched, you will download the Rozgar customer app, describe your service need, set a budget or request quotes, and be matched with nearby verified workers. You can track the worker in real-time and pay securely through the app once the job is done to your satisfaction.</div>
+      </div>
+
+      <div class="faq-item" onclick="toggleFaq(this)">
+        <div class="faq-question">How are prices decided? <div class="faq-chevron">▾</div></div>
+        <div class="faq-answer">Rozgar uses a transparent, negotiation-friendly model inspired by InDrive. You post a job with your budget, nearby workers respond with their offers, and you choose who you want. There are no hidden platform fees for customers — what you agree with the worker is what you pay.</div>
+      </div>
+
+      <div class="faq-item" onclick="toggleFaq(this)">
+        <div class="faq-question">What if I'm not happy with the work done? <div class="faq-chevron">▾</div></div>
+        <div class="faq-answer">Every job on Rozgar comes with a post-job guarantee. If you're not satisfied, you can raise a dispute through the app before releasing payment. Our team reviews disputes and works to reach a fair resolution. We also encourage leaving honest ratings so other users can make informed decisions.</div>
+      </div>
+
+      <div class="faq-item" onclick="toggleFaq(this)">
+        <div class="faq-question">Is my payment safe? <div class="faq-chevron">▾</div></div>
+        <div class="faq-answer">Yes. Payments on Rozgar are processed through a secure in-app wallet. You only release payment after the job is marked complete and you're satisfied. We do not share your financial details with workers, and all transactions are logged for your records.</div>
+      </div>
+
+      <div class="faq-item" onclick="toggleFaq(this)">
+        <div class="faq-question">Which areas does Rozgar serve? <div class="faq-chevron">▾</div></div>
+        <div class="faq-answer">At launch, Rozgar will serve Defence Housing Authority (DHA), Clifton, and Gulshan-e-Iqbal in Karachi. We plan to expand to other Karachi areas and eventually other cities based on demand and worker supply.</div>
+      </div>
+
+      <div class="eyebrow" style="margin: 48px 0 20px;">For Workers (Kaarigar)</div>
+
+      <div class="faq-item" onclick="toggleFaq(this)">
+        <div class="faq-question">How do I join Rozgar as a worker? <div class="faq-chevron">▾</div></div>
+        <div class="faq-answer">You will sign up through the Rozgar Partner app, submit your CNIC and a selfie for identity verification, and select the service categories you work in. Our team reviews your application and, once approved, you can start receiving job requests in your area.</div>
+      </div>
+
+      <div class="faq-item" onclick="toggleFaq(this)">
+        <div class="faq-question">Does Rozgar charge workers a fee? <div class="faq-chevron">▾</div></div>
+        <div class="faq-answer">Rozgar operates on a commission-based model. A small platform commission is deducted from each completed job. There are no upfront registration fees. Workers keep the majority of what they earn, and all earnings are tracked transparently in the app.</div>
+      </div>
+
+      <div class="faq-item" onclick="toggleFaq(this)">
+        <div class="faq-question">When and how do workers get paid? <div class="faq-chevron">▾</div></div>
+        <div class="faq-answer">Once a customer marks a job complete and approves payment, earnings are credited to your Rozgar wallet. You can withdraw to your bank account or mobile wallet (JazzCash/Easypaisa) on a regular schedule. All transactions are tracked in your dashboard.</div>
+      </div>
+
+      <div class="faq-item" onclick="toggleFaq(this)">
+        <div class="faq-question">Can I work on Rozgar part-time? <div class="faq-chevron">▾</div></div>
+        <div class="faq-answer">Absolutely. Rozgar is designed for flexible work. You set your own availability and service radius. Accept jobs when you want, at the rates you're comfortable with. There's no minimum commitment required.</div>
+      </div>
+
+    </div>
+  </div>
+
+</div>
+
+
+<!-- ═══════════════════════════════════════
+     PAGE: CONTACT
+═══════════════════════════════════════ -->
+<div class="page" id="page-contact">
+
+  <div class="page-hero">
+    <div class="page-hero-inner">
+      <div class="eyebrow">Get in Touch</div>
+      <h1>We'd love to hear from you</h1>
+      <p class="lead" style="margin-top:12px;">Whether you're a potential customer, kaarigar, investor, or partner — reach out. We read every message.</p>
+    </div>
+  </div>
+
+  <div class="section">
+    <div class="contact-grid">
+      <div>
+        <h2 style="margin-bottom:32px;font-size:28px;">Contact information</h2>
+
+        <div class="contact-info-item">
+          <div class="contact-icon">📧</div>
+          <div>
+            <h4>Email</h4>
+            <p>hello@rozgar.pk<br><span style="font-size:13px;color:var(--gray-400);">We respond within 24 hours</span></p>
+          </div>
+        </div>
+
+        <div class="contact-info-item">
+          <div class="contact-icon">📍</div>
+          <div>
+            <h4>Location</h4>
+            <p>Karachi, Pakistan<br><span style="font-size:13px;color:var(--gray-400);">Currently serving Defence, Clifton, Gulshan-e-Iqbal</span></p>
+          </div>
+        </div>
+
+        <div class="contact-info-item">
+          <div class="contact-icon">🏢</div>
+          <div>
+            <h4>Parent Company</h4>
+            <p>AK Systems<br><span style="font-size:13px;color:var(--gray-400);cursor:pointer;" onclick="navigate('ak')">Learn more about AK Systems →</span></p>
+          </div>
+        </div>
+
+        <div class="contact-info-item">
+          <div class="contact-icon">💼</div>
+          <div>
+            <h4>For Investors & Partners</h4>
+            <p>investors@rozgar.pk<br><span style="font-size:13px;color:var(--gray-400);">Pitch deck available on request</span></p>
+          </div>
+        </div>
+      </div>
+
+      <div class="contact-form">
+        <h3 style="margin-bottom:24px;">Send us a message</h3>
+        <div class="form-row">
+          <div class="form-group">
+            <label>First Name</label>
+            <input type="text" placeholder="Ahmed">
+          </div>
+          <div class="form-group">
+            <label>Last Name</label>
+            <input type="text" placeholder="Khan">
+          </div>
+        </div>
+        <div class="form-group">
+          <label>Email Address</label>
+          <input type="email" placeholder="ahmed@example.com">
+        </div>
+        <div class="form-group">
+          <label>I am a…</label>
+          <select>
+            <option value="">Select one</option>
+            <option>Customer (homeowner)</option>
+            <option>Kaarigar / Worker</option>
+            <option>Investor</option>
+            <option>Media / Press</option>
+            <option>Partner / Business</option>
+            <option>Job Seeker</option>
+            <option>Other</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label>Message</label>
+          <textarea rows="4" placeholder="Tell us what's on your mind…"></textarea>
+        </div>
+        <button class="btn btn-primary" style="width:100%;justify-content:center;" onclick="submitForm()">Send Message</button>
+        <div class="form-success" id="formSuccess">✓ Message received! We'll get back to you within 24 hours.</div>
+      </div>
+    </div>
+  </div>
+
+</div>
+
+
+<!-- ═══════════════════════════════════════
+     PAGE: AK SYSTEMS
+═══════════════════════════════════════ -->
+<div class="page" id="page-ak">
+
+  <div class="ak-hero">
+    <div class="hero-grid"></div>
+    <div class="ak-hero-inner">
+      <div class="eyebrow">AK Systems</div>
+      <h1>Building Pakistan's digital infrastructure</h1>
+      <p class="lead">AK Systems is a Karachi-based technology company building platforms that solve real problems for Pakistan's underserved markets.</p>
+    </div>
+  </div>
+
+  <div class="section">
+    <div class="two-col-prose">
+      <div>
+        <div class="eyebrow">About the Company</div>
+        <h2 style="margin-bottom:20px;">Who we are</h2>
+        <p style="margin-bottom:16px;">AK Systems was founded with a single conviction: the biggest opportunities in Pakistan tech are not in copying Western apps, but in solving distinctly Pakistani problems with digital-first thinking.</p>
+        <p style="margin-bottom:16px;">From the informal labour market to the unorganised SME sector, we focus on markets that are large, underserved, and ready for a digital layer.</p>
+        <p>We're a lean, execution-focused team based in Karachi — currently in build mode with our flagship product, Rozgar.</p>
+      </div>
+      <div style="display:flex;flex-direction:column;gap:12px;">
+        <div class="stat-item">
+          <div class="stat-num" style="font-size:32px;">2024</div>
+          <div class="stat-label">Founded in Karachi</div>
+        </div>
+        <div class="stat-item">
+          <div class="stat-num" style="font-size:32px;">1<em>+</em></div>
+          <div class="stat-label">Active product in development</div>
+        </div>
+        <div class="stat-item">
+          <div class="stat-num" style="font-size:32px;">🇵🇰</div>
+          <div class="stat-label">100% focused on the Pakistani market</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="section-alt">
+    <div class="section-alt-inner">
+      <div class="section-header">
+        <div class="eyebrow">Our Portfolio</div>
+        <h2>Products under AK Systems</h2>
+      </div>
+      <div class="card-grid card-grid-2">
+        <div class="ak-product-card">
+          <div class="ak-pill ak-pill-active">Active — In Development</div>
+          <h3>Rozgar</h3>
+          <p>Pakistan's first verified home services marketplace. Connecting homeowners with trusted kaarigar through a transparent, app-based platform. Launching in Karachi 2025.</p>
+          <a class="btn btn-primary" style="margin-top:20px;display:inline-flex;" onclick="navigate('home')">Learn More →</a>
+        </div>
+        <div class="ak-product-card" style="opacity:0.65;">
+          <div class="ak-pill ak-pill-future">Future Product</div>
+          <h3>TBD</h3>
+          <p>Our next product will be announced once Rozgar reaches operational maturity. We're focused on execution, not announcements.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="section">
+    <div class="section-header">
+      <div class="eyebrow">Our Focus</div>
+      <h2>What guides us</h2>
+    </div>
+    <div class="card-grid card-grid-3">
+      <div class="card">
+        <div class="card-icon orange-bg">🎯</div>
+        <h3>Execution Over Ideas</h3>
+        <p>We don't build to pitch. We build to ship. Every product we work on has a clear path to real users and real revenue.</p>
+      </div>
+      <div class="card">
+        <div class="card-icon orange-bg">🇵🇰</div>
+        <h3>Pakistan First</h3>
+        <p>Our products are designed for Pakistani realities — Urdu-first UX, offline tolerance, local payment methods, and ground-level operations.</p>
+      </div>
+      <div class="card">
+        <div class="card-icon orange-bg">📈</div>
+        <h3>Venture Scale</h3>
+        <p>We build for markets large enough to create category-defining companies. Blue-collar services, SME tools, and the informal economy are all venture-scale opportunities in Pakistan.</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="cta-band">
+    <div class="hero-grid"></div>
+    <div class="cta-band-inner">
+      <h2>Work with AK Systems</h2>
+      <p>Investors, partners, and potential team members are welcome to reach out. We're building something meaningful.</p>
+      <div style="display:flex;gap:12px;justify-content:center;flex-wrap:wrap;">
+        <a class="btn btn-primary" onclick="navigate('contact')">Contact Us</a>
+        <a class="btn" style="background:rgba(255,255,255,0.1);color:white;border:1px solid rgba(255,255,255,0.2);" onclick="navigate('about')">About Rozgar</a>
+      </div>
+    </div>
+  </div>
+
+</div>
+
+
+<!-- ═══════════════════════════════════════
+     PAGE: TERMS
+═══════════════════════════════════════ -->
+<div class="page" id="page-terms">
+  <div class="legal-content">
+    <div class="eyebrow">Legal</div>
+    <h1>Terms of Service</h1>
+    <p class="updated">Last updated: January 2025</p>
+
+    <p>Welcome to Rozgar, a product of AK Systems. By accessing or using the Rozgar platform — including our website, mobile applications, and related services — you agree to be bound by these Terms of Service. Please read them carefully.</p>
+
+    <h2>1. Acceptance of Terms</h2>
+    <p>By creating an account or using Rozgar in any capacity, you confirm that you are at least 18 years of age, have the legal authority to enter into these terms, and agree to comply with all applicable laws of Pakistan.</p>
+
+    <h2>2. Description of Services</h2>
+    <p>Rozgar is a technology platform that connects customers seeking home services with independent skilled workers (kaarigar). Rozgar acts as an intermediary marketplace and does not directly employ workers or provide services itself. All service providers on the platform are independent contractors.</p>
+
+    <h2>3. User Accounts</h2>
+    <p>You are responsible for maintaining the confidentiality of your account credentials. You must provide accurate information during registration. Rozgar reserves the right to suspend or terminate accounts that violate these terms or engage in fraudulent activity.</p>
+
+    <h2>4. Service Bookings and Payments</h2>
+    <ul>
+      <li>Prices are agreed between customers and workers on the platform. Rozgar facilitates this agreement but does not set prices.</li>
+      <li>Payments are processed through the Rozgar in-app wallet. Funds are released to workers only upon job completion and customer approval.</li>
+      <li>A platform commission is deducted from worker earnings on each completed transaction.</li>
+      <li>Refunds and disputes are handled per our Dispute Resolution policy below.</li>
+    </ul>
+
+    <h2>5. Worker Verification</h2>
+    <p>Rozgar conducts CNIC-based identity verification and selfie matching for all workers. However, Rozgar does not guarantee the quality, safety, or fitness of any worker for a specific task. Customers are encouraged to review worker profiles, ratings, and reviews before booking.</p>
+
+    <h2>6. Prohibited Conduct</h2>
+    <ul>
+      <li>Using the platform to engage in fraudulent, abusive, or illegal activity.</li>
+      <li>Circumventing the platform to pay workers directly and avoid platform fees after initial contact through Rozgar.</li>
+      <li>Posting false reviews or manipulating the rating system.</li>
+      <li>Harassing, threatening, or discriminating against workers or customers.</li>
+    </ul>
+
+    <h2>7. Dispute Resolution</h2>
+    <p>In the event of a dispute between a customer and a worker, either party may raise a dispute through the app within 48 hours of job completion. Rozgar's team will review the dispute and may request evidence from both parties. Rozgar's decision on disputes is final within the platform context.</p>
+
+    <h2>8. Limitation of Liability</h2>
+    <p>To the maximum extent permitted by Pakistani law, Rozgar and AK Systems shall not be liable for any indirect, incidental, consequential, or punitive damages arising from use of the platform. Rozgar's total liability for any claim shall not exceed the amount paid by the user for the specific transaction in question.</p>
+
+    <h2>9. Changes to Terms</h2>
+    <p>Rozgar reserves the right to modify these terms at any time. Continued use of the platform after changes constitutes acceptance of the new terms. We will notify users of material changes via the app or email.</p>
+
+    <h2>10. Governing Law</h2>
+    <p>These terms are governed by the laws of the Islamic Republic of Pakistan. Any disputes arising from these terms shall be resolved in the courts of Karachi, Sindh.</p>
+
+    <h2>11. Contact</h2>
+    <p>For questions about these terms, contact us at <a href="mailto:legal@rozgar.pk">legal@rozgar.pk</a> or through our <a onclick="navigate('contact')" style="cursor:pointer;">Contact page</a>.</p>
+  </div>
+</div>
+
+
+<!-- ═══════════════════════════════════════
+     PAGE: PRIVACY
+═══════════════════════════════════════ -->
+<div class="page" id="page-privacy">
+  <div class="legal-content">
+    <div class="eyebrow">Legal</div>
+    <h1>Privacy Policy</h1>
+    <p class="updated">Last updated: January 2025</p>
+
+    <p>AK Systems (operating as Rozgar) is committed to protecting your privacy. This policy explains what information we collect, how we use it, and your rights regarding your data.</p>
+
+    <h2>1. Information We Collect</h2>
+    <p>We collect information in three ways:</p>
+    <ul>
+      <li><strong>Information you provide:</strong> Name, phone number, email address, CNIC (for workers), and payment information during registration and use.</li>
+      <li><strong>Information generated by use:</strong> Location data (when you use the app), job history, transaction records, ratings and reviews, and in-app communications.</li>
+      <li><strong>Device information:</strong> Device type, operating system, and app version for technical support and improvement purposes.</li>
+    </ul>
+
+    <h2>2. How We Use Your Information</h2>
+    <ul>
+      <li>To create and manage your account on the platform.</li>
+      <li>To match customers with nearby verified workers using location data.</li>
+      <li>To process payments and maintain transaction records.</li>
+      <li>To verify worker identity and maintain platform safety.</li>
+      <li>To send service-related notifications and updates.</li>
+      <li>To improve our platform, detect fraud, and resolve disputes.</li>
+    </ul>
+
+    <h2>3. Location Data</h2>
+    <p>Rozgar uses your device location to show you nearby workers and allow customers to track workers in transit to their job. Location data is only collected while you are actively using the app. You can revoke location permission through your device settings, though this will limit core platform functionality.</p>
+
+    <h2>4. Worker CNIC and Identity Data</h2>
+    <p>CNIC scans and selfie photos submitted by workers are used solely for identity verification purposes. This data is stored securely and is never shared with customers or third parties except where required by law.</p>
+
+    <h2>5. Sharing Your Information</h2>
+    <p>We do not sell your personal information. We may share data with:</p>
+    <ul>
+      <li>Service providers who help us operate the platform (cloud hosting, payment processing, SMS gateways).</li>
+      <li>Law enforcement or regulatory authorities when required by Pakistani law.</li>
+      <li>Other users to the extent necessary for service delivery (e.g., sharing your name and rating with a matched worker).</li>
+    </ul>
+
+    <h2>6. Data Security</h2>
+    <p>We implement industry-standard security measures including encrypted data storage, JWT-based authentication, and access controls. However, no system is completely secure. We encourage users to use strong passwords and report any suspected security issues to us immediately.</p>
+
+    <h2>7. Data Retention</h2>
+    <p>We retain your account data for as long as your account is active. Transaction records may be retained longer for legal and financial compliance purposes. You may request deletion of your account data by contacting us, subject to applicable legal requirements.</p>
+
+    <h2>8. Children's Privacy</h2>
+    <p>Rozgar is not intended for users under the age of 18. We do not knowingly collect personal information from minors. If we discover that a minor has registered, we will promptly delete their account and data.</p>
+
+    <h2>9. Your Rights</h2>
+    <p>You have the right to access, correct, or delete your personal information held by Rozgar. To exercise these rights, contact us at <a href="mailto:privacy@rozgar.pk">privacy@rozgar.pk</a>. We will respond to verified requests within 30 days.</p>
+
+    <h2>10. Changes to This Policy</h2>
+    <p>We may update this policy from time to time. We will notify you of significant changes via the app or email. Continued use of Rozgar after changes constitutes acceptance of the updated policy.</p>
+
+    <h2>11. Contact</h2>
+    <p>For privacy-related questions or requests, email <a href="mailto:privacy@rozgar.pk">privacy@rozgar.pk</a> or visit our <a onclick="navigate('contact')" style="cursor:pointer;">Contact page</a>.</p>
+  </div>
+</div>
+
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-inner">
+    <div class="footer-top">
+      <div class="footer-brand">
+        <div class="logo" onclick="navigate('home')" style="cursor:pointer;">
+          <div class="logo-mark">
+            <svg viewBox="0 0 20 20" fill="none"><circle cx="10" cy="10" r="3" fill="#F5622E"/><path d="M10 2C5.58 2 2 5.58 2 10s3.58 8 8 8 8-3.58 8-8-3.58-8-8-8zm0 2a6 6 0 016 6 6 6 0 01-6 6A6 6 0 014 10a6 6 0 016-6z" fill="white" opacity="0.6"/></svg>
+          </div>
+          <span class="logo-text">roz<span>gar</span></span>
+        </div>
+        <p>Pakistan's trusted platform for verified home service professionals. Connecting households with skilled kaarigar in Karachi.</p>
+        <p style="margin-top:12px;font-size:13px;">A product of <span style="color:rgba(255,255,255,0.7);font-weight:500;cursor:pointer;" onclick="navigate('ak')">AK Systems</span></p>
+      </div>
+      <div class="footer-col">
+        <h4>Platform</h4>
+        <ul>
+          <li><a onclick="navigate('home')">Home</a></li>
+          <li><a onclick="navigate('services')">Services</a></li>
+          <li><a onclick="navigate('about')">About Us</a></li>
+          <li><a onclick="navigate('faqs')">FAQs</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Company</h4>
+        <ul>
+          <li><a onclick="navigate('ak')">AK Systems</a></li>
+          <li><a onclick="navigate('contact')">Contact</a></li>
+          <li><a onclick="navigate('contact')">Careers</a></li>
+          <li><a onclick="navigate('contact')">Investors</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Legal</h4>
+        <ul>
+          <li><a onclick="navigate('terms')">Terms of Service</a></li>
+          <li><a onclick="navigate('privacy')">Privacy Policy</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© 2025 AK Systems. All rights reserved.</span>
+      <div class="footer-legal">
+        <a onclick="navigate('terms')">Terms</a>
+        <a onclick="navigate('privacy')">Privacy</a>
+        <a onclick="navigate('contact')">Contact</a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<script>
+  const pages = ['home','about','services','faqs','contact','ak','terms','privacy'];
+
+  function navigate(page) {
+    pages.forEach(p => {
+      const el = document.getElementById('page-' + p);
+      if (el) el.classList.remove('active');
+    });
+
+    const target = document.getElementById('page-' + page);
+    if (target) {
+      target.classList.add('active');
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    }
+
+    document.querySelectorAll('.nav-links a[data-page]').forEach(a => {
+      a.classList.toggle('active', a.dataset.page === page);
+    });
+  }
+
+  function toggleFaq(item) {
+    const isOpen = item.classList.contains('open');
+    document.querySelectorAll('.faq-item.open').forEach(el => el.classList.remove('open'));
+    if (!isOpen) item.classList.add('open');
+  }
+
+  function toggleMobile() {
+    document.getElementById('mobileMenu').classList.toggle('open');
+  }
+
+  function submitForm() {
+    document.getElementById('formSuccess').style.display = 'block';
+    setTimeout(() => {
+      document.getElementById('formSuccess').style.display = 'none';
+    }, 5000);
+  }
+</script>
+
+</body>
+</html>
